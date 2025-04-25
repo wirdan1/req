@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Request Antitext</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Hari ke 2 request antitext</h1>
+    <form action="/submit" method="post">
+      <input type="text" name="content" placeholder=".antitext jpm, bokep, dll" required>
+      <button type="submit">Kirim</button>
+    </form>
+    <ul class="request-list">
+      {% for content, created_at in requests %}
+        <li>
+          <div class="bubble">{{ content }}</div>
+          <span class="timestamp">{{ created_at.strftime('%H:%M %d-%m-%Y') }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</body>
+</html>
